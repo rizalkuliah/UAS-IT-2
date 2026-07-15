@@ -8,3 +8,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
 </head>
 <body>
+
+     <nav class="top-nav">
+        <div class="container">
+            <a href="#" class="nav-logo" onclick="showPage('home')">
+                <svg class="logo-icon" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#e94560"/><path d="M12 14C12 12.8954 12.8954 12 14 12H26C27.1046 12 28 12.8954 28 14V26C28 27.1046 27.1046 28 26 28H14C12.8954 28 12 27.1046 12 26V14Z" stroke="white" stroke-width="2.5"/><path d="M16 16L20 20L24 16" stroke="white" stroke-width="2.5"/><path d="M20 20V24" stroke="white" stroke-width="2.5"/><circle cx="20" cy="14" r="1.5" fill="white"/><circle cx="20" cy="26" r="1.5" fill="white"/></svg>
+                <span>ALWAYS<span></span> <small>T-Shirt</small>
+            </a>
+            <div class="nav-links">
+                <a href="#" class="active" data-page="home" onclick="showPage('home')" data-i18n="nav.home">Home</a>
+                <a href="#" data-page="catalog" onclick="showPage('catalog')" data-i18n="nav.catalog">Catalog</a>
+                <a href="#" data-page="about" onclick="showPage('about')" data-i18n="nav.about">About</a>
+                <a href="#" data-page="orders" onclick="showPage('orders')" data-i18n="nav.orders">Orders</a>
+                <button class="nav-cart" onclick="showPage('cart')" id="cartBtn">
+                    🛒 <span class="count" id="cartCount">0</span>
+                    <span class="cart-pulse" id="cartPulse"></span>
+                </button>
+                <button class="nav-lang" onclick="toggleLang()" id="langToggle">EN</button>
+                <button class="nav-admin" onclick="showPage('admin-login')">⚙️</button>
+            </div>
+        </div>
+    </nav>
+
+     <nav class="bottom-nav">
+        <button class="active" onclick="showPage('home')"><span class="icon">🏠</span><span data-i18n="nav.home">Home</span></button>
+        <button onclick="showPage('catalog')"><span class="icon">🛍️</span><span data-i18n="nav.catalog">Catalog</span></button>
+        <button onclick="showPage('about')"><span class="icon">ℹ️</span><span data-i18n="nav.about">About</span></button>
+        <button onclick="showPage('orders')"><span class="icon">📦</span><span data-i18n="nav.orders">Orders</span></button>
+        <button onclick="showPage('cart')"><span class="icon">🛒</span><span>Cart</span><span class="badge-bottom" id="bottomCartCount">0</span></button>
+        <button onclick="showPage('admin-login')"><span class="icon">⚙️</span><span>Admin</span></button>
+    </nav>
+
+    <div class="toast-container" id="toastContainer"></div>
