@@ -122,5 +122,5 @@ Ke depannya, integrasi dengan tools seperti Google Analytics atau dashboard inte
 
 📍 Jl. Raya Laswi No. 25, Ciparay, Jakarta, Indonesia
 📞 +62 838-2128-4553
-✉️ support@alwaystshirt.com
+✉️ alwaystshirt@gmail.com
 📷 Instagram: [@alwaystshirt](https://www.instagram.com/alwayst_shirt)
