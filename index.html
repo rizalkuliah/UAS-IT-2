@@ -99,3 +99,59 @@
             <div class="product-grid" id="catalogGrid"></div>
         </div>
     </div>
+
+      <div class="page" id="page-about">
+        <div class="container">
+            <div style="background:var(--card);border-radius:var(--radius);padding:32px 24px;box-shadow:var(--shadow);margin:12px 0;">
+                <h2 style="font-size:28px;margin-bottom:12px;">👕 Tentang Always T-Shirt</h2>
+                <p style="font-size:15px;line-height:1.7;color:var(--text-light);max-width:700px;">
+                    <strong>Always T-Shirt</strong> adalah brand fashion lokal yang berdiri sejak tahun 2026 dengan misi menghadirkan t-shirt berkualitas premium yang memadukan gaya modern, kenyamanan, dan kepedulian terhadap lingkungan. Kami percaya bahwa fashion bukan hanya tentang penampilan, tetapi juga tentang rasa percaya diri dan memberikan dampak positif bagi bumi. Dengan menggunakan 100% katun organik bersertifikat serta proses produksi yang etis, kami menghadirkan produk berkualitas tinggi, desain eksklusif, harga yang kompetitif, dan pengalaman berbelanja yang mudah, aman, serta menyenangkan. Didukung pengiriman cepat, layanan pelanggan 24/7, dan kolaborasi bersama desainer lokal Indonesia, Always T-Shirt berkomitmen untuk terus berinovasi, menjaga transparansi, 
+                    serta menginspirasi gaya hidup yang lebih berkelanjutan melalui gerakan #FashionUntukBumi.
+                <h2 style="font-size:28px;margin-bottom:12px;">👕 About Always T-Shirt</h2>
+                <p style="font-size:15px;line-height:1.7;color:var(--text-light);max-width:700px;">
+                    <strong>Always T-Shirt</strong>is a local fashion brand established in 2026 with a mission to provide premium-quality t-shirts that combine modern style, comfort, and environmental responsibility. We believe fashion is more than appearance—it is about confidence and making a positive impact on the planet. Using certified 100% organic cotton and ethical production practices, we create comfortable, durable, and exclusive designs at competitive prices while supporting local Indonesian designers and sustainable creativity. With fast shipping, 24/7 customer service, and a transparent commitment to quality, inclusivity, and innovation,
+                     Always T-Shirt strives to deliver an enjoyable shopping experience and inspire a more sustainable lifestyle through the #FashionForEarth movement.
+                </p>
+                <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:20px;margin:24px 0;">
+                    <div style="background:var(--bg);border-radius:12px;padding:20px;text-align:center;"><span style="font-size:32px;">🌱</span><h4>Eco-Friendly</h4><p style="font-size:13px;color:var(--text-light);">Organic & sustainable.</p></div>
+                    <div style="background:var(--bg);border-radius:12px;padding:20px;text-align:center;"><span style="font-size:32px;">✂️</span><h4>Timeless Fit</h4><p style="font-size:13px;color:var(--text-light);">Designed to last.</p></div>
+                    <div style="background:var(--bg);border-radius:12px;padding:20px;text-align:center;"><span style="font-size:32px;">❤️</span><h4>Made with Care</h4><p style="font-size:13px;color:var(--text-light);">Ethically produced.</p></div>
+                </div>
+                <p style="font-size:14px;color:var(--text-light);border-top:1px solid var(--border);padding-top:16px;">📍 Jakarta, Indonesia · Since 2026</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" id="page-cart">
+        <div class="container">
+            <h2 style="margin:6px 0 16px;" data-i18n="cart.title">🛒 Your Cart</h2>
+            <div id="cartItems"></div>
+            <div id="cartSummary"></div>
+            <div style="margin-top:12px;">
+                <button class="btn btn-primary btn-block" onclick="goToCheckout()" data-i18n="cart.checkout">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" id="page-checkout">
+        <div class="container">
+            <h2 style="margin:6px 0 16px;" data-i18n="checkout.title">📋 Checkout</h2>
+            <div class="checkout-form">
+                <div class="field"><label data-i18n="checkout.name">Full Name</label><input type="text" id="checkoutName" placeholder="Rizal Ganteng" /></div>
+                <div class="field"><label data-i18n="checkout.email">Email</label><input type="email" id="checkoutEmail" placeholder="ooo@gmail.com" /></div>
+                <div class="field"><label data-i18n="checkout.phone">Phone</label><input type="text" id="checkoutPhone" placeholder="+62 812..." /></div>
+                <div class="field"><label data-i18n="checkout.address">Address</label><textarea id="checkoutAddress" placeholder="Jl. Contoh No. 123"></textarea></div>
+                <label style="font-weight:600;font-size:14px;display:block;margin:8px 0 4px;" data-i18n="checkout.payment">Payment</label>
+                <div class="payment-methods">
+                    <input type="radio" name="payment" id="pm-bank" value="Bank Transfer" checked /><label for="pm-bank"><span class="pm-icon">🏦</span> Bank</label>
+                    <input type="radio" name="payment" id="pm-paypal" value="PayPal" /><label for="pm-paypal"><span class="pm-icon">💳</span> PayPal</label>
+                    <input type="radio" name="payment" id="pm-dana" value="DANA" /><label for="pm-dana"><span class="pm-icon">📱</span> DANA</label>
+                    <input type="radio" name="payment" id="pm-ovo" value="OVO" /><label for="pm-ovo"><span class="pm-icon">🟣</span> OVO</label>
+                    <input type="radio" name="payment" id="pm-gopay" value="GoPay" /><label for="pm-gopay"><span class="pm-icon">🟢</span> GoPay</label>
+                </div>
+                <div id="paymentAccountInfo" style="background:#f0fdf4;border-radius:8px;padding:10px 14px;margin:6px 0 12px;font-size:13px;border:1px solid #bbf7d0;">💳 <strong>Bank Transfer:</strong> BCA 1234-5678-9012</div>
+                <div class="order-summary-mini" id="checkoutSummary"></div>
+                <button class="btn btn-success btn-block" onclick="placeOrder()" data-i18n="checkout.placeOrder">✅ Place Order</button>
+            </div>
+        </div>
+    </div>
