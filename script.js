@@ -295,7 +295,7 @@ function openModal(id) {
     document.getElementById('modalName').textContent = p.name;
     const price = p.promo && p.promo > 0 ? p.promo : p.price;
     document.getElementById('modalPrice').innerHTML = fmt(price) + (p.promo && p.promo > 0 ? ` <span style="text-decoration:line-through;font-size:16px;color:var(--text-light);">${fmt(p.price)}</span>` : '');
-    document.getElementById('modalDesc').textContent = p.description || 'Premium tee.';
+    document.getElementById('modalDesc').textContent = p.description || 'Kaos Berbahan Premium dari Katun yang menyerap keringat dan nyaman dipakai.';
     document.getElementById('modalStock').textContent = getTotalStock(p) <= 0 ? '❌ Out of Stock' : `✅ ${getTotalStock(p)} total stock`;
     document.getElementById('modalStock').style.color = getTotalStock(p) <= 0 ? '#dc2626' : '#059669';
     const sizeContainer = document.getElementById('modalSizeButtons');
@@ -734,3 +734,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }));
 });
 
+// Expose ke global
+window.showPage = showPage;
+window.toggleLang = toggleLang;
+window.addFromCard = addFromCard;
+window.selectCardSize = selectCardSize;
+window.removeFromCart = removeFromCart;
+window.updateCartQty = updateCartQty;
+window.openModal = openModal;
+window.closeModal = closeModal;
+window.selectModalSize = selectModalSize;
+window.changeModalQty = changeModalQty;
+window.addFromModal = addFromModal;
+window.goToCheckout = goToCheckout;
+window.placeOrder = placeOrder;
+window.closeOrderSuccess = closeOrderSuccess;
+window.adminLogin = adminLogin;
+window.adminLogout = adminLogout;
+window.adminTab = adminTab;
+window.toggleProductForm = toggleProductForm;
+window.editProduct = editProduct;
+window.saveProduct = saveProduct;
+window.deleteProduct = deleteProduct;
+window.filterCategory = filterCategory;
+window.updateOrderStatus = updateOrderStatus;
+window.resetProducts = resetProducts;
+window.toast = toast;
