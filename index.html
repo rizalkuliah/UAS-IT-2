@@ -40,3 +40,62 @@
     </nav>
 
     <div class="toast-container" id="toastContainer"></div>
+
+       <div class="modal-overlay" id="productModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <img class="modal-img" id="modalImg" src="" />
+            <div class="modal-name" id="modalName"></div>
+            <div class="modal-price" id="modalPrice"></div>
+            <div class="modal-desc" id="modalDesc"></div>
+            <div class="modal-stock" id="modalStock"></div>
+            <div class="modal-size">
+                <label>Ukuran:</label>
+                <div class="size-buttons" id="modalSizeButtons"></div>
+            </div>
+            <div class="modal-qty">
+                <button onclick="changeModalQty(-1)">−</button>
+                <span id="modalQty">1</span>
+                <button onclick="changeModalQty(1)">+</button>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="addFromModal()" id="modalAddBtn">🛒 Add to Cart</button>
+        </div>
+    </div>
+
+      <div class="modal-overlay" id="orderSuccessModal">
+        <div class="modal-content" style="max-width:480px;text-align:center;">
+            <h2 style="color:#16a34a;margin-bottom:12px;">✅ Pesanan Berhasil!</h2>
+            <p style="font-size:15px;color:var(--text-light);margin-bottom:8px;">Silakan konfirmasi pesanan Anda melalui WhatsApp untuk menyelesaikan proses.</p>
+            <div id="orderSuccessInfo" style="background:var(--bg);border-radius:8px;padding:12px;margin:12px 0;text-align:left;font-size:14px;"></div>
+            <a id="waOrderBtn" href="#" target="_blank" class="btn btn-success btn-block" style="margin-top:8px;">💬 Konfirmasi via WhatsApp</a>
+            <button class="btn btn-outline btn-block" onclick="closeOrderSuccess()" style="margin-top:8px;">Tutup</button>
+        </div>
+    </div>
+
+       <div class="page active" id="page-home">
+        <div class="container">
+            <div class="hero">
+                <h1 data-i18n="hero.title">Premium <span>T-Shirts</span> for Everyday</h1>
+                <p data-i18n="hero.sub">Crafted from 100% premium organic cotton for lasting comfort and style.</p>
+                <button class="btn btn-primary" onclick="showPage('catalog')" data-i18n="hero.cta">Shop Now →</button>
+            </div>
+            <div class="promo-banner"><span class="promo-text">🎉 <span data-i18n="promo.text">Get 15% off!</span></span><span class="promo-code">ALWAYS15</span></div>
+            <div class="section-header"><h2 data-i18n="home.featured">⭐ Featured</h2><a href="#" onclick="showPage('catalog')" data-i18n="home.viewAll">View All →</a></div>
+            <div class="product-grid" id="featuredGrid"></div>
+            <div class="section-header"><h2 data-i18n="home.categories">📂 Categories</h2></div>
+            <div class="category-pills" id="homeCategories"></div>
+        </div>
+    </div>
+
+      <div class="page" id="page-catalog">
+        <div class="container">
+            <h2 style="margin:6px 0 4px;" data-i18n="catalog.title">All Products</h2>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="🔍 Search..." data-i18n-placeholder="catalog.search" />
+                <select id="categoryFilter"><option value="">All Categories</option></select>
+                <select id="sortFilter"><option value="default" data-i18n="catalog.sortDefault">Sort</option><option value="price-asc" data-i18n="catalog.priceLow">Price ↑</option><option value="price-desc" data-i18n="catalog.priceHigh">Price ↓</option></select>
+            </div>
+            <div class="category-pills" id="catalogPills"></div>
+            <div class="product-grid" id="catalogGrid"></div>
+        </div>
+    </div>
