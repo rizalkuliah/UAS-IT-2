@@ -165,3 +165,82 @@
             </div>
         </div>
     </div>
+
+      <div class="page" id="page-admin-login">
+        <div class="container">
+            <div class="admin-login">
+                <h2>🔐 Admin Login</h2>
+                <div class="field"><label>Username</label><input type="text" id="adminUser" value="admin" /></div>
+                <div class="field"><label>Password</label><input type="password" id="adminPass" value="admin123" /></div>
+                <button class="btn btn-primary btn-block" onclick="adminLogin()">Login</button>
+                <div class="error" id="adminLoginError"></div>
+                <div style="margin-top:12px;font-size:12px;color:var(--text-light);text-align:center;"></div>
+            </div>
+        </div>
+    </div>
+
+  <div class="page" id="page-admin-dashboard">
+        <div class="container">
+            <div class="admin-panel">
+                <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:12px;">
+                    <h2>⚙️ Admin</h2>
+                    <div style="display:flex;gap:8px;">
+                        <button class="btn btn-outline btn-sm" onclick="resetProducts()">🔄 Reset ke Default</button>
+                        <button class="btn btn-outline btn-sm" onclick="adminLogout()">🚪 Logout</button>
+                    </div>
+                </div>
+                <div class="admin-tabs">
+                    <button class="active" data-tab="dashboard" onclick="adminTab('dashboard')">📊 Stats</button>
+                    <button data-tab="products" onclick="adminTab('products')">👕 Products</button>
+                    <button data-tab="orders" onclick="adminTab('orders')">📦 Orders</button>
+                </div>
+                <div id="admin-dashboard"><div class="admin-stats" id="adminStats"></div></div>
+                <div id="admin-products" class="hidden">
+                    <button class="btn btn-primary btn-sm" onclick="toggleProductForm()" style="margin-bottom:12px;">+ Tambah Produk</button>
+                    <div class="admin-form hidden" id="productForm">
+                        <div class="full"><label>Nama Produk</label><input type="text" id="pfName" /></div>
+                        <div><label>Harga</label><input type="number" id="pfPrice" /></div>
+                        <div><label>Kategori</label><input type="text" id="pfCategory" /></div>
+                        <div><label>Total Stok</label><input type="number" id="pfStock" /></div>
+                        <div class="full"><label>URL Gambar</label><input type="text" id="pfImage" placeholder="image/kaos.jpg atau https://..." /></div>
+                        <div class="full"><label>Harga Promo (opsional)</label><input type="number" id="pfPromo" placeholder="0" /></div>
+                        <div class="full"><label>Ukuran (pisahkan koma, contoh: S,M,L,XL)</label><input type="text" id="pfSizes" placeholder="S,M,L,XL" /></div>
+                        <div class="full"><button class="btn btn-primary" onclick="saveProduct()">💾 Simpan</button><button class="btn btn-outline" onclick="toggleProductForm()">Batal</button></div>
+                        <input type="hidden" id="pfEditId" />
+                    </div>
+                    <div class="admin-table-wrap">
+                        <table class="admin-table">
+                            <thead><tr><th>Gambar</th><th>Nama</th><th>Harga</th><th>Stok</th><th>Ukuran</th><th>Aksi</th></tr></thead>
+                            <tbody id="adminProductTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="admin-orders" class="hidden">
+                    <div class="admin-table-wrap">
+                        <table class="admin-table">
+                            <thead><tr><th>Order ID</th><th>Customer</th><th>Total</th><th>Status</th><th>Aksi</th></tr></thead>
+                            <tbody id="adminOrderTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 <strong>Always T-Shirt</strong> — <span data-i18n="footer.tag">Premium tees.</span></p>
+              <div class="footer-info">
+            <p>📍 Jl. Raya laswi No. 25, Ciparay, Jakarta,, Indonesia</p>
+            <p>📞 +62 838-2128-4553</p>
+            <p>✉️ support@alwaystshirt.com</p>
+            <p>
+                📷 Instagram:
+                <a href="https://www.instagram.com/alwayst_shirt?utm_source=qr&igsh=NzM5NTQ0cGh4b2Fr" target="_blank">@alwaystshirt</a>
+                &nbsp;
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
